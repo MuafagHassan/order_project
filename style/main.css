@@ -1,0 +1,300 @@
+@font-face { font-family: poppins; src: url('fonts/Poppins-Regular.ttf') }
+
+@font-face { font-family: poppins-bold; src: url('fonts/Poppins-Bold.ttf') }
+
+/* fram_work */
+
+*,::before,::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0
+}
+
+html { scroll-behavior: smooth }
+
+body { text-transform: capitalize }
+
+p { line-height: 1.5 }
+
+img { max-width: 100% }
+
+a { text-decoration: none }
+
+ul { list-style: none }
+
+button {
+  text-transform: capitalize;
+  outline: none;
+  border: none;
+  cursor: pointer
+}
+
+.text-center { text-align: center }
+
+.text-right { text-align: right }
+
+.text-left { text-align: left }
+
+.main-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0
+}
+
+.hidden { display: none !important }
+
+.show { display: block !important }
+
+/* end_section */
+
+/* global_values */
+
+h1,h2,h3,h4,h5,h6,strong {
+  font-family: poppins-bold;
+  color: var(--dark-to-white);
+  transition: color var(--trans-time)
+}
+
+button { font-family: poppins-bold }
+
+h1 { font-size: 2.8rem }
+
+h2 { font-size: 2rem }
+
+p {
+  color: var(--sliver);
+  font-weight: bold;
+  transition: color var(--trans-time)
+}
+
+section { padding: 50px 0 }
+
+section p { margin: 20px 0 }
+
+.container { max-width: 73% }
+
+.about .row, .safety .row, .watch .row, .contact-us .row, .nav-menu { align-items: center }
+
+.btn-order {
+  background-color: var(--main-color);
+  color: var(--black) !important;
+  font-size: 1.1rem;
+  font-family: poppins-bold;
+  border-radius: 20px;
+  box-shadow: 0 1px 1.5px var(--main-black-color);
+  padding: 12px 18px;
+  transition: background-color var(--tr)
+}
+
+/* end_section */
+
+:root {
+  --main-color: #ffd000;
+  --main-black-color: #333;
+  --white: #fff;
+  --trans-time: .3s linear
+}
+
+.light-mode {
+  --white-to-dark: #fff;
+  --dark-to-white: #333;
+  --sliver: #555;
+  --sliver-to-orange: #919191;
+}
+
+.dark-mode {
+  --main-color: #f3b200;
+  --white-to-dark: #181612;
+  --dark-to-white: #f7f7f7;
+  --sliver: #dddddd;
+  --sliver-to-orange: orange;
+
+}
+
+body {
+  background-color: var(--white-to-dark);
+  font-family: poppins;
+  font-size: 1rem;
+  padding-top: 70px;
+  transition: background-color var(--trans-time)
+}
+
+header {
+  background-color: var(--main-color);
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transition: var(--trans-time);
+}
+
+.scroll-header {
+  box-shadow: 0 1px 2px var(--main-black-color)
+}
+
+nav { height: 100% }
+
+nav .row { height: 100%; align-items: center }
+
+.brand {
+  color: var(--dark);
+  font-family: poppins-bold;
+  font-size: 1.3rem;
+  transition: color var(--tr)
+}
+
+.nav-menu { display: flex; justify-content: space-around }
+
+.nav-menu li { position: relative }
+
+.nav-menu .active::after {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translatex(-50%);
+  background-color: var(--main-black-color);
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  transition: background-color var(--trans-time)
+}
+
+header a {
+  color: var(--dark);
+  font-size: 1.1rem;
+  font-family: poppins-bold;
+  transition: color var(--tr)
+}
+
+.header-button { box-shadow: 0 1px 3px var(--main-black-color) }
+
+.toggle-btn {
+  display: none;
+  background: none;
+  border: 2px solid;
+  width: 35px;
+  height: 33px;
+  padding: 7px;
+  transition: border-color var(--trans-time)
+}
+
+.toggle-btn span {
+  display: block;
+  background-color: var(--main-black-color);
+  height: 2px;
+  transition-property: opacity, transform;
+  transition-duration: .5s
+}
+
+.trans span:first-of-type { transform: rotate(-45deg) translate(-5px, 5px) }
+
+.trans span:nth-of-type(2) { opacity: 0 }
+
+.trans span:last-of-type { transform: rotate(45deg) translate(-4.5px, -5px ) }
+
+.toggle-btn span:not(:last-of-type) { margin-bottom: 5px }
+
+.dark-mode-btn {
+  background-color: var(--sliver-to-orange);
+  width: 35px;
+  height: 20px;
+  padding: 1px;
+  border-radius: 10px;
+  border: 3px solid var(--white);
+  transition: background-color var(--tr), border-color var(--tr)
+}
+
+.dark-mode-btn span {
+  position: relative;
+  left: 0;
+  display: block;
+  width: 50%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--white);
+  transition: left var(--trans-time)
+}
+
+.dark-mode-btn .dark-active { left: 50% }
+
+.home img { height: 300px }
+
+.services h2 { margin-bottom: 30px }
+
+.services .item {
+  border-radius: 10px;
+  box-shadow: 0 0 2px var(--dark-to-white);
+  transition: box-shadow var(--trans-time); 
+  padding: 30px;
+}
+
+.services img { margin-top: 20px }
+
+.services p { margin: 20px 0 }
+
+.services img { max-height: 200px }
+
+.services a { color: var(--dark-to-white); font-family: poppins-bold }
+
+.watch p { margin-bottom: 40px }
+
+.watch a { margin-right: 10px }
+
+.watch i { margin-right: 10px }
+
+.fa-apple { font-size: 1.6rem }
+
+.fa-google-play { font-size: 1.3rem }
+
+address { font-style: normal }
+
+address p {
+  color: var(--dark-to-white);
+  transition: color var(--tr);
+  margin: 0
+}
+
+address p:not(:last-of-type) { margin-bottom: 10px }
+
+address span { color: var(--sliver); margin-left: 10px; transition: color var(--tr) }
+
+.contact-us .row div a { display: inline-block }
+
+footer {
+  background-color: var(--main-color);
+  padding: 50px 0;
+  transition: background-color var(--trans-time)
+}
+
+footer h3 { color: var(--dark); margin-bottom: 20px }
+
+footer li:not(:last-of-type) { margin-bottom: 10px }
+
+footer ul a { color: var(--main-black-color); font-weight: 700 }
+
+footer .row > div:last-of-type a {
+  color: var(--dark);
+  font-size: 1.2rem;
+  margin-right: 20px
+}
+
+.scroll-top {
+  position: fixed;
+  left: 10%;
+  bottom: -60px;
+  font-size: 1.3rem;
+  background-color: var(--main-color);
+  border-radius: 6px;
+  padding: 6px 13px;
+  box-shadow: 0 1px 2px var(--main-black-color);
+  transition: bottom .3s;
+  z-index: 2
+}
+
+.show-scroll { bottom: 20px }
